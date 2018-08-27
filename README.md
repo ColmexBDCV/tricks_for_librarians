@@ -25,3 +25,9 @@ from glob import glob
 pre = "2011_" #<- aquí se agrega el prefijo que se quiera poner
 [os.rename(f, "{}{}".format(pre, f)) for f in glob("*.pdf")]
 ```
+
+# Programas útiles
+
+## Orange
+
+1. Instalar
