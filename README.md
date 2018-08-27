@@ -28,6 +28,20 @@ pre = "2011_" #<- aquí se agrega el prefijo que se quiera poner
 
 # Programas útiles
 
-## Orange
+## Text Mining
 
-1. Instalar
+### Orange
+
+1. Instalar Anaconda para tu sistema operativo https://www.anaconda.com/download/
+2. Instalar orange3-text: https://github.com/biolab/orange3-text
+a) En el Anaconda Prompt primero añadir "add conda-forge" a tus canalees:
+
+    conda config --add channels conda-forge
+
+b) Después se instala orange text
+
+    conda install orange3-text
+
+c) Luego se abre el programa con:
+
+    python -m Orange.canvas
