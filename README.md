@@ -1,21 +1,21 @@
 # Trucos para bibliotecas
 Documentación para la solución de problemas que encontramos en la vida bibliotecaria
 
-# Scripts para la terminal de Windows
+## Scripts para la terminal de Windows
 
-## Quitar espacios y reemplazarlos por guiones bajos
+### Quitar espacios y reemplazarlos por guiones bajos
 ```winbatch
 cmd /e:on /v:on /c "for %f in ("* *.txt") do (set "n=%~nxf" & set "n=!n: =_!" & ren "%~ff" "!n!" )" 
 ```
 
-## Convertir pdfs a texto
+### Convertir pdfs a texto
 ```winbatch
 FORFILES /M *.pdf /C "cmd /c pdftotext @file" 
 ```
 
-# Scripts en python
+## Scripts en python
 
-## Transformando los nombres de un archivo con acentos y eñes a ASCII
+### Transformando los nombres de un archivo con acentos y eñes a ASCII
 
 ```python
 import os
@@ -28,7 +28,7 @@ for file_name in os.listdir(src_dir):
     os.rename(os.path.join(src_dir,file_name), os.path.join(src_dir, normalized))
 ```
 
-## Agregando un prefijo a los nombres de archivo
+### Agregando un prefijo a los nombres de archivo
 ```python
 os.chdir("")  #aquí se pone la dirección de la carpeta
 os.getcwd()
@@ -38,11 +38,11 @@ pre = "2011_" #<- aquí se agrega el prefijo que se quiera poner
 [os.rename(f, "{}{}".format(pre, f)) for f in glob("*.pdf")]
 ```
 
-# Programas útiles
+## Programas útiles
 
-## Text Mining
+### Text Mining
 
-### Orange
+#### Orange
 
 1. Instalar Anaconda para tu sistema operativo https://www.anaconda.com/download/
 2. Instalar orange3-text: https://github.com/biolab/orange3-text
