@@ -8,7 +8,12 @@ Documentación para la solución de problemas que encontramos en la vida bibliot
 cmd /e:on /v:on /c "for %f in ("* *.txt") do (set "n=%~nxf" & set "n=!n: =_!" & ren "%~ff" "!n!" )" 
 ```
 
-# Pequeños scripts en python
+## Convertir pdfs a texto
+```winbatch
+FORFILES /M *.pdf /C "cmd /c pdftotext @file" 
+```
+
+# Scripts en python
 
 ## Transformando los nombres de un archivo con acentos y eñes a ASCII
 
