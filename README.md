@@ -1,6 +1,13 @@
 # Trucos para bibliotecas
 Documentación para la solución de problemas que encontramos en la vida bibliotecaria
 
+# Scripts para la terminal de Windows
+
+## Quitar espacios y reemplazarlos por guiones bajos
+```winbatch
+cmd /e:on /v:on /c "for %f in ("* *.txt") do (set "n=%~nxf" & set "n=!n: =_!" & ren "%~ff" "!n!" )" 
+```
+
 # Pequeños scripts en python
 
 ## Transformando los nombres de un archivo con acentos y eñes a ASCII
