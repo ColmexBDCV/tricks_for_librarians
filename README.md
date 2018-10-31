@@ -59,3 +59,25 @@ b) Después se instala orange text
 c) Luego se abre el programa con:
 
     python -m Orange.canvas
+   
+### Bibliometrías 
+
+#### Citedby (API de Scielo)
+
+
+1. Instalar con pip
+
+```pip install citedbyapi```
+
+
+2. Abrir en terminal python o abrir IDE con interpretador
+
+```python
+
+from citedby import client
+
+client.RestfulClient()
+
+cl.citedby_doi("10.1016/j.jenvp.2005.08.002")
+
+```
