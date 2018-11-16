@@ -3,7 +3,7 @@
 getwd()
 
 ## Cambiar a directorio donde está el texto a corregir
-setwd("C:/Users/segutierrez/Dropbox/a_trabajo")
+setwd("C:/Users/XXXX/Dropbox/a_trabajo")
 
 #Leer datos de un txt en el que cada fila es un año formato YYYYMMDD
 my_data <- read.delim("anios2.txt")
