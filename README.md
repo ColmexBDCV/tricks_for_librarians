@@ -1,5 +1,6 @@
 # Trucos para bibliotecas
 Documentación para la solución de problemas que encontramos en la vida bibliotecaria
+Si quisieras contribuir escribe un correo a segutierrez (arroba) colmex.mx
 
 ## Scripts para la terminal de Windows
 
@@ -12,6 +13,7 @@ cmd /e:on /v:on /c "for %f in ("* *.txt") do (set "n=%~nxf" & set "n=!n: =_!" & 
 ```winbatch
 FORFILES /M *.pdf /C "cmd /c pdftotext @file" 
 ```
+Primero se tienen que descargar https://www.xpdfreader.com/download.html y establecer correctamente las variables de entorno. Para más detalles ver: https://prezi.com/bqmznyehjtul/extraccion-de-texto/
 
 ## Scripts en R
 
