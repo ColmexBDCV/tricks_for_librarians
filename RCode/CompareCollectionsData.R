@@ -4,7 +4,7 @@ getwd()
 library(VennDiagram)
 library(dplyr)
 # set working directory
-#setwd("/home/silvia/Dropbox/a_BCV/Colecciones")
+#setwd("/home/USER/FOLDER/")
 asc = read.csv("asc3.csv", sep=",", header=T, fill=TRUE, encoding = "utf-8", stringsAsFactors=FALSE)
 usa = read.csv("usa.csv", sep=",", header=T, fill=TRUE, encoding = "utf-8", stringsAsFactors=FALSE)
 paa = read.csv("paa.csv", sep=",", header=T, fill=TRUE, encoding = "utf-8", stringsAsFactors=FALSE)
