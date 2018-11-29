@@ -5,29 +5,31 @@ library(tidyr)
 library(dplyr)
 library(lubridate)
 
-#Definir la ruta 
+#1) Definir la ruta 
 setwd("C:/Users/XXX/XXX/XXXX/2017_03_24_consultas")
 
 #archivos = list.files(path)
 
-#Leer el ics y crear df
+#2) Leer el ics y crear df
 #?readLines
+#Aquí se escribe el nombre de tu archivo ICS (más información de cómo exportar tu calendario de Google en: https://support.google.com/calendar/answer/37111?hl=en)
 x <- readLines("duda.ics", warn = FALSE, encoding = "UTF-8")
 keyval <- do.call(rbind, regmatches(x, regexpr(":", x, fixed = TRUE), invert = TRUE))
 keyval <- keyval[which.max(keyval[,1]=="BEGIN" & keyval[,2]=="VEVENT"):tail(which(keyval[,1]=="END" & keyval[,2]=="VEVENT"), 1),]
 keyval <- cbind.data.frame(keyval, id=cumsum(keyval[,1]=="BEGIN" & keyval[,2]=="VEVENT"))
 df <- reshape(keyval, timevar="1", idvar="id", direction = "wide")
 View(df)
-#Subset del df con sólo fecha y evento
+
+#3) Subset del df con sólo fecha y evento
 
 fecha_evento <- df[,c(7,13)]
 View(fecha_evento)
 
-#Extraer fecha
+#4) Extraer fecha en un formato de tipo YYYYMMDD
 d <- plyr::rename(fecha_evento, c("2.CREATED"="created", "2.SUMMARY"="event"))
 d$datestring <- substring(d$created,1,8)
 
-#Dar formato de fecha
+#5) Dar formato de fecha
 
 #library("lubridate")
 d$date <- as.Date(d$datestring, "%Y%m%d")
@@ -36,9 +38,7 @@ consultas <- d[,c(2,4)]
 cons <- separate(consultas, event, c("procedencia", "nombre"), "_", fill="left")
 #View(cons$date)
 
-
-
-#Definir periodo
+#6) Definir periodo que quieres reportar
 feb_nov <- filter(cons, between(date, as.Date("2018-01-01"), as.Date("2018-11-30")))
 ?month
 
