@@ -4,6 +4,20 @@ Si quisieras contribuir escribe un correo a segutierrez (arroba) colmex.mx
 
 ## Scripts para la terminal de Windows
 
+### Crear una lista con los nombres de archivos en una carpeta
+
+1. Abrir terminal (botón windows + escribir "terminal")
+2. Se copia la ruta del archivo donde están tus archivos, por ejemplo: "C:\Users\xxx\Dropbox\A_Proyectos\Zapata\xxx" (que está en la barra superior de tu explorador de archivos)
+3. En la terminal se escribe "cd" y luego botón derecho (eso hace que se pegue la ruta "C:\...."). Por ejemplo: 
+```winbatch
+cd C:\Users\xxx\Dropbox\A_Proyectos\Zapata\xxx
+```
+4. Una vez hecho esto se escribe:
+```winbatch
+dir /s > nombres_de_mis_archivos.txt
+```
+(donde dir significa "enlistar archivos"; /s significa enlistar subcarpetas; > significa "guardar en"; y después se escribe el nombre de archivo donde se va a guardar)
+
 ### Quitar espacios y reemplazarlos por guiones bajos
 ```winbatch
 cmd /e:on /v:on /c "for %f in ("* *.txt") do (set "n=%~nxf" & set "n=!n: =_!" & ren "%~ff" "!n!" )" 
