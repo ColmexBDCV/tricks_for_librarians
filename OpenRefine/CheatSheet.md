@@ -1,6 +1,3 @@
-//Useful recipes for achieving certain tasks in OpenRefine//
-
-
 This page collects OpenRefine recipes, small workflows and code fragments that show you how to achieve specific things with OpenRefine.
 
 = 1. Dates =
