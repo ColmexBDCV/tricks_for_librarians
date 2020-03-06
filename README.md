@@ -2,6 +2,15 @@
 Documentación para la solución de problemas que encontramos en la vida bibliotecaria
 Si quisieras contribuir escribe un correo a segutierrez (arroba) colmex.mx
 
+## Scripts en línea para ciertas tareas
+
+### Para editar textos: https://onlinetexttools.com/
+
+### Para editar CSVs https://onlinecsvtools.com/
+
+### Para PNGs https://onlinepngtools.com/
+
+
 ## Scripts para la terminal de Windows
 
 ### Crear una lista con los nombres de archivos en una carpeta
