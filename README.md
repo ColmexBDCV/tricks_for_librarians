@@ -1,5 +1,6 @@
 # Trucos para bibliotecas
-Documentación para la solución de problemas que encontramos en la vida bibliotecaria
+Documentación para la solución de problemas que encontramos en la vida bibliotecaria.
+
 Si quisieras contribuir escribe un correo a segutierrez (arroba) colmex.mx
 
 ## Scripts en línea para ciertas tareas
