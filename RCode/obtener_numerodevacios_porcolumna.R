@@ -1,3 +1,6 @@
+library(readr)
+library(tidyverse)
+
 mi_df <- read_csv("aquívaladirección/detuarchivo.csv")
 
 reporte_df <- mi_df %>%
