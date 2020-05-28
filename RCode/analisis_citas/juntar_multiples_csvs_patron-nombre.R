@@ -7,8 +7,8 @@ library(plyr)
 CEAA <- plyr::rbind.fill(
   lapply(
     list.files(
-      "2015_2019", 
-      pattern = "^CEAA(.*)csv$", 
+      "2015_2019", #nombre de la carpeta
+      pattern = "^CEAA(.*)csv$", #patrón del nombre, los csvs se llaman: CEAA_Banerjee_2015_Menus.csv / CEAA_Banerjee_2015_Religion.csv, etc
       full.names = TRUE
     ), 
     read_csv
@@ -109,3 +109,6 @@ CEDUA$Centro <- "CEDUA"
 CEE$Centro <- "CEE"
 
 citantes <- rbind.fill(PEI, CES, CEDUA, CEE, CEH, CEAA, CEI, CELL)
+
+write_csv(citantes, "citantes2015_2019.csv")
+
