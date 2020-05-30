@@ -1,5 +1,6 @@
 # Introducción a OpenRefine
 Por: Silvia Gutiérrez [@espejolento](https://twitter.com/espejolento) (para el taller con Rodrigo Cuéllar) [[CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es)]
+
 **Adaptado de:** https://programminghistorian.org/es/lecciones/limpieza-de-datos-con-OpenRefine
 
 
