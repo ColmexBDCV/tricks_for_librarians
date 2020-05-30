@@ -20,21 +20,7 @@ Por: Silvia Gutiérrez [@espejolento](https://twitter.com/espejolento) (para el 
 
 1. [Descarga](http://openrefine.org/download.html) la última versión de *OpenRefine* . [*OpenRefine*](http://openrefine.org/) funciona en todas las plataformas: Windows, Mac y Linux.  Estas son las instrucciones son para la descarga en **Windows**: 
     1. Descarga el [**Windows kit**](https://github.com/OpenRefine/OpenRefine/releases/download/2.8/openrefine-win-2.8.zip) **(de OpenRefine)**
-    2. Una vez descargada la carpeta comprimida en Windows da clic en “Extraer” (Imagen 1) y luego en “Extraer todo” (imagen 2)
-    
-![Imagen 1](https://d2mxuefqeaa7sj.cloudfront.net/s_67CBD5ACAF9FB8C288B855EBC1DB95E9787E1E23A05E86CB34AE6654FCDEB023_1525382740807_image.png)
-
-
-
-![Imagen 2](https://d2mxuefqeaa7sj.cloudfront.net/s_67CBD5ACAF9FB8C288B855EBC1DB95E9787E1E23A05E86CB34AE6654FCDEB023_1525382951825_extraer_todo.png)
-
-    c. Selecciona la carpeta en donde vas a guardar OpenRefine
-
-
-![](https://d2mxuefqeaa7sj.cloudfront.net/s_67CBD5ACAF9FB8C288B855EBC1DB95E9787E1E23A05E86CB34AE6654FCDEB023_1525383136525_image.png)
-
-
-
+    2. Una vez descargada la carpeta comprimida en Windows da clic en “Extraer” y luego en “Extraer todo”
 
 ## Abriendo OpenRefine
 
