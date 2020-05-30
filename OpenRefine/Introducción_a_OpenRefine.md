@@ -3,10 +3,6 @@ Por: Silvia Gutiérrez [@espejolento](https://twitter.com/espejolento) (para el 
 **Adaptado de:** https://programminghistorian.org/es/lecciones/limpieza-de-datos-con-OpenRefine
 
 
-## Este documento: bit.ly/openrefine2
-
-
-
 ## Descargando tus datos
 
 
