@@ -6,3 +6,7 @@ Si tienes la frase "1 de enero a 7 de noviembre 1914" y quieres obtener sólo el
 ```
 value.match(/.*?(\d{4}).*?/)[0]
 ```
+
+# 2. Facetas muy comprimidas #
+
+añadir .log() al final
