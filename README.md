@@ -140,7 +140,7 @@ c) Luego se abre el programa con:
    
 ### Bibliometrías 
 
-#### Citedby (API de Scielo)
+#### Citedby (API de Scielo con python)
 
 
 1. Instalar con pip
@@ -159,3 +159,17 @@ client.RestfulClient()
 cl.citedby_doi("10.1016/j.jenvp.2005.08.002")
 
 ```
+
+#### Bibliometrix (paquete de R)
+
+1. Instalar paquete
+
+```install.packages("bibliometrix", dependencies= TRUE) ###instala el paquete bibliometrix y todas las dependencias```
+
+2. Leer archivo bib exportado desde Scopus
+
+```archivo <- readFiles("http://www.bibliometrix.org/datasets/savedrecs.bib")```
+
+3. Convertir archivo bib a df
+
+ ```df <- convert2df(archivo, dbsource = "scopus", format = "bibtex")```
