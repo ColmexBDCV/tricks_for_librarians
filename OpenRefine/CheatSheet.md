@@ -17,7 +17,9 @@ Primero tienes que obtener el número VIAF en una columna y puedes hacer esto v�
 
 Una vez que están en una columna puedes:
 
-1) !Crear otra basada en esa[https://i.stack.imgur.com/8Pdz5.png]
+1) Crear una columna basada en esa
+
+![Imagen de cómo llegar a esa función](https://i.stack.imgur.com/8Pdz5.png)
 
 2) Obtener los XML de VIAF con esta expresión GREL
 
