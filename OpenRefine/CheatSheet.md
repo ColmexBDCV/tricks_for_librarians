@@ -17,18 +17,29 @@ Primero tienes que obtener el número VIAF en una columna y puedes hacer esto v�
 
 Una vez que están en una columna puedes:
 
-1) Crear una columna basada en esa
+1) Crear una columna basada la de los números VIAF con la función: "Add column by fetching URLS"
 
-![Imagen de cómo llegar a esa función](https://i.stack.imgur.com/8Pdz5.png)
+![Imagen de cómo llegar a esa función](https://mdl.library.utoronto.ca/sites/default/files/pictures/openrefineworkshop102.png)
 
-2) Obtener los XML de VIAF con esta expresión GREL
+2) Una vez que se abra la ventana en la que puedes ingresar tu expresión GREL escribir lo siguiente:
 
 ```
 "https://viaf.org/viaf/"+cell.recon.match.id+"/viaf.xml"
 ```
 
-3) Crear otra basada en el XML con la siguiente expresión:
+3) En la columna de los XML obteneidos usar la función: "Add column based on this column"
+
+![Imagen de cómo llegar a esa función](https://i.stack.imgur.com/8Pdz5.png)
+
+
+4) Escribir la siguiente expresión:
 
 ```
 value.parseHtml().select('ns1|text')[0].htmlText()
+```
+
+5) Si se quiere obtener el "segundo" nombre de la lista escribir esta otra expresión
+
+```
+value.parseHtml().select('ns1|text')[1].htmlText()
 ```
