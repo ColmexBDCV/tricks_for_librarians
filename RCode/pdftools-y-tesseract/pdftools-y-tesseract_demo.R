@@ -1,0 +1,36 @@
+# Taller de introducción al procesamiento de textos con R
+# Autor: Silvia Gutiérrez (@espejolento)
+# Licencia: CC BY 4.0
+
+library(pdftools)
+library(stringr)
+library(readr)
+library(tesseract)
+
+
+
+############# Ejemplo 1: Texto nativo digital #################
+
+# Leemos el texto con la siguiente función de pdftools:
+ley <- pdftools::pdf_text("Ley_Federal_Refugiados.pdf")
+ley
+
+# La función guardó cada página en vectores distintos
+# para guardar todo el texto en la misma variable usamos la función de stringr, str_c() y el parámetro "collapse"
+ley <- stringr::str_c(ley, collapse = "")
+ley
+
+# Guardarlo en un archivo de texto plano con la función de readr: write_lines() 
+readr::write_lines(ley, "ley.txt")
+
+############# Ejemplo 2: Texto/imagen (escaneado) #################
+
+
+tesseract::tesseract_download("spa") # se bajan los datos de entrenamiento del idioma que nos interesa
+
+yanez <- pdftools::pdf_ocr_text("yanez_declaraciones.pdf", lang="spa") #se aplica OCR usando el idioma que bajamos
+
+
+yanez <- stringr::str_c(yanez, collapse = "")
+
+readr::write_lines(yanez, "yanez.txt") #con la función write_lines podemos crear un documento de texto plano con el texto extraído con OCR
