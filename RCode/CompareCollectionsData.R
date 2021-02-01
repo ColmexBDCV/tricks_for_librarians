@@ -1,16 +1,17 @@
-getwd()
 #install.packages("VennDiagram")
 #install.packages("eulerr")
+
 library(VennDiagram)
 library(dplyr)
-# set working directory
+
+#getwd()
+# set working directory:
 #setwd("/home/USER/FOLDER/")
 asc = read.csv("asc3.csv", sep=",", header=T, fill=TRUE, encoding = "utf-8", stringsAsFactors=FALSE)
 usa = read.csv("usa.csv", sep=",", header=T, fill=TRUE, encoding = "utf-8", stringsAsFactors=FALSE)
 paa = read.csv("paa.csv", sep=",", header=T, fill=TRUE, encoding = "utf-8", stringsAsFactors=FALSE)
 
 #View(paa)
-
 
 asc_pub <- c(asc$Publication.Name)
 usa_pub <- c(usa$Publication.Name)
@@ -20,9 +21,6 @@ length(asc_pub) # 16,971
 length(usa_pub) # 218
 length(paa_pub) # 215
 
-215-23-28
-89+23
-16971-89-89-23
 en_usa_no_asc <- setdiff(usa_pub, asc_pub)
 length(en_usa_no_asc) #106
 en_asc_y_usa <- intersect(usa_pub, asc_pub)
@@ -71,15 +69,10 @@ plot(fit2,
 ?plot
 
 write.csv(fuera_de_asc, file="fuera_de_asc.csv", row.names = FALSE)
-
-
 en_paa_no_asc
-
 
 en_ascft_y_hicft <- intersect(hic_ft_pub, asc_ft_pub)
 length(en_ascft_y_hicft) #468
-
-
 
 View(asc)
 hic_pub <- c(hic$Publication.Name)
@@ -102,22 +95,3 @@ length(hic$Publication.Name) #2882
 
 #8968 (52%) con texto completo en asc
 #1829 (64%) con texto completo en hic
-
-100-36
-
-2882-1053
-1829*100/2882
-8968*100/16971
-
-1361*100/1829
-468*100/1829
-
-
-
-
-#View(table(hic$Publication.Name))
-
-
-
-
-1031*100/2881
