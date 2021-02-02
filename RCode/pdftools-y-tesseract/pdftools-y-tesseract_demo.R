@@ -1,6 +1,7 @@
 # Taller de introducción al procesamiento de textos con R
-# Autor: Silvia Gutiérrez (@espejolento)
+# Autora: Silvia Gutiérrez (@espejolento)
 # Licencia: CC BY 4.0
+# Inspirado en el taller con @rivaquiroga: https://github.com/silviaegt/RLadiesCDMX_talleres/blob/master/extraccion_pdfs/importacion-y-limpieza-textos.R
 
 # En esta lección usaremos cuatro paquetes de R, si no los tienen instalados
 # pueden instalarlos con la función: instal.packages("nombre del paquete entrecomillado")
@@ -10,7 +11,7 @@ library(stringr)
 library(readr)
 library(tesseract)
 
-############# Ejemplo 1: Texto nativo digital #################
+# Ejemplo 1: Texto nativo digital (que se escribió en computadora y guardó como pdf) ---------------------------------
 
 # Leemos el texto con la siguiente función de pdftools:
 ley <- pdftools::pdf_text("Ley_Federal_Refugiados.pdf")
