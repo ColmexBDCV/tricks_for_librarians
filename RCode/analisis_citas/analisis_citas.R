@@ -184,6 +184,9 @@ citantes2015_2019 <-citantes2015_2019 %>%
   discard(~all(is.na(.x))) %>%
   map_df(~.x)
 
+##### Otro modo de quitar columnas con un porcentaje de celdas vacías mayor al 70%
+citantes2015_2019 <- citantes2015_2019[, which(colMeans(!is.na(citantes2015_2019)) > 0.7)]
+            
 ##### Otro proceso para identificar columnas vacías
 citantes2015_2019 %>% 
   profile_missing() %>% #
