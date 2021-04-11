@@ -180,11 +180,11 @@ View(citantes2015_2019)
 
 ##### Quitar columnas vacías
 citantes2015_2019 <-citantes2015_2019 %>% 
-  purr::map(~.x) %>% #transforma su input y aplica una fución a cada elemento
+  purrr::map(~.x) %>% #transforma su input y aplica una fución a cada elemento
   discard(~all(is.na(.x))) %>%
   map_df(~.x)
 
-##### Otro proceso para quitar columnas vacías
+##### Otro proceso para identificar columnas vacías
 citantes2015_2019 %>% 
   profile_missing() %>% #
   filter(pct_missing == 1.00000000)
