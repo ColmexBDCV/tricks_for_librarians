@@ -34,5 +34,4 @@ tesseract::tesseract_download("spa") # se bajan los datos de entrenamiento del i
 yanez <- pdftools::pdf_ocr_text("yanez_declaraciones.pdf", lang="spa") #se aplica OCR usando el idioma que bajamos
 
 yanez_texto <- stringr::str_c(yanez, collapse = "") #ver líneas 21-24 para entender qué hace esta función
-
 readr::write_lines(yanez_texto, "yanez.txt") #con la función write_lines podemos crear un documento de texto plano con el texto extraído con OCR
