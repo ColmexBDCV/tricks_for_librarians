@@ -43,3 +43,9 @@ value.parseHtml().select('ns1|text')[0].htmlText()
 ```
 value.parseHtml().select('ns1|text')[1].htmlText()
 ```
+
+# 3. Obtener el QID de una celda reconciliada #
+Usar la función: "Add column based on this column"
+```
+cell.recon.match.id
+```
