@@ -14,7 +14,7 @@ Si quisieras contribuir escribe un correo a segutierrez (arroba) colmex.mx
 
 ## Scripts para la terminal de Windows
 
-### Crear una lista con los nombres de archivos en una carpeta
+### 1) Crear una lista con los nombres de archivos en una carpeta
 
 1. Abrir terminal (botón windows + escribir "terminal")
 2. Se copia la ruta del archivo donde están tus archivos, por ejemplo: "C:\Users\xxx\Dropbox\A_Proyectos\Zapata\xxx" (que está en la barra superior de tu explorador de archivos)
@@ -28,9 +28,9 @@ dir /s > nombres_de_mis_archivos.txt
 ```
 (donde dir significa "enlistar archivos"; /s significa enlistar subcarpetas; > significa "guardar en"; y después se escribe el nombre de archivo donde se va a guardar)
 
-### Crear una csv con los nombres de tus archivos (y sus rutas de carpeta)
+### 2) Crear una csv con los nombres de tus archivos (y sus rutas de carpeta)
 
-Sigues los pasos 1, 2 y 3 del tutorial anterior
+Sigues los pasos 1, 2 y 3 de 1)
 
 4. Una vez hecho esto se escribe:
 ```winbatch
@@ -39,6 +39,15 @@ dir /a /s /b > misarchivos.csv
 
 (donde dir significa "enlistar archivos"; /a significa "muestra todos los archivos" (viene de "all" en inglés); /s significa "enlista las subcarpetas"; /b significa "muéstralos en formato simple" (viene de "bare" en inglés); > significa "guardar en"; y después se escribe el nombre de archivo donde se va a guardar)
 
+### Cambiar el tipo de archivo de un documento
+Sigues los pasos 1, 2 y 3 de 1)
+
+4. Una vez hecho esto se escribe:
+```winbatch
+ren *.tei *xml
+```
+
+(para cambiar todos los .tei a .xml
 
 ### Quitar espacios y reemplazarlos por guiones bajos
 ```winbatch
