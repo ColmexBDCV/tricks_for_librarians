@@ -8,7 +8,9 @@
 # pueden instalarlos con la función: instal.packages("nombre del paquete entrecomillado")
 
 library(pdftools)
+citation("pdftools")
 library(stringr)
+citation("readr")
 library(readr)
 library(tesseract)
 
