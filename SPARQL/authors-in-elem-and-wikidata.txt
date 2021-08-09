@@ -1,0 +1,18 @@
+#defaultView:Map{"hide": ["?coord"]}
+#Query by Silvia Gutiérrez (@espejolento)
+
+SELECT ?author ?authorLabel ?birthplaceLabel ?idELEM ?coord
+
+(GROUP_CONCAT(DISTINCT ?occupation_label; SEPARATOR=", ") as ?occupations) #thanks to @NavinoEvans for this!
+
+WHERE {
+      ?author wdt:P1565 ?idELEM . #has a ELEM id   
+       OPTIONAL {
+        ?author wdt:P19 ?birthplace .   # born in a place...
+         ?birthplace wdt:P625 ?coord .
+         ?author wdt:P106 ?occupation . #get occupation
+         ?occupation rdfs:label ?occupation_label FILTER (lang(?occupation_label) = "es") #get label the 'manual' way 
+       }
+SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],es". }        
+} GROUP BY ?author ?authorLabel ?birthplaceLabel ?idELEM ?coord #GROUP BY
+LIMIT 5000
