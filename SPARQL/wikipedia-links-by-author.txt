@@ -1,0 +1,9 @@
+#Consulta de Silvia Gutiérrez @espejolento
+SELECT ?item ?itemLabel ?linkCount WHERE {
+  ?item wdt:P50 wd:Q5682. #autor es Cervantes
+  ?item wikibase:sitelinks ?linkCount . #cuántos artículos en otro idioma
+    ?article schema:about ?item .
+    ?article schema:isPartOf <https://es.wikipedia.org/> . #has wikipedia article
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],es". }
+}
+LIMIT 1000
