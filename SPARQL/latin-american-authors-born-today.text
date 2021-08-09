@@ -1,0 +1,37 @@
+#Escritoras/es que nacieron "el día de hoy"
+#defaultView:Map{"hide": ["?coord"]}
+#Query by Silvia Gutiérrez (@espejolento)
+
+SELECT ?personItem ?person ?personDescription  ?date ?Country_of_citizenship ?Occupation  ?Gender ?image ?rank ?Cause_of_death ?Ethnic_group ?Education ?coord (CONCAT(?person,' (',?personDescription,')') as ?title)
+WHERE {
+{
+SELECT ?personItem ?date ?countryItem ?genderItem ?causeOfDeathItem ?ethnicGroupItem ?educatedAtItem ?coord
+(SAMPLE(?image) as ?image)
+(COUNT(?article) as ?rank) 
+WHERE {	
+?personItem wdt:P569 ?date .
+?personItem wdt:P18 ?image .
+?personItem wdt:P21 ?genderItem .
+?personItem wdt:P106 wd:Q36180 .
+?personItem wdt:P19 ?birthplace .   
+?birthplace wdt:P17 ?countryItem .  
+?countryItem p:P361/ps:P361 wd:Q12585 .
+?countryItem wdt:P625 ?coord .
+OPTIONAL { ?personItem wdt:P509 ?causeOfDeathItem }
+OPTIONAL { ?personItem wdt:P172 ?ethnicGroupItem }
+OPTIONAL { ?personItem wdt:P69 ?educatedAtItem }
+OPTIONAL { ?article schema:about ?personItem }
+FILTER (datatype(?date) = xsd:dateTime && month(?date) = month(now()) && day(?date) = day(now()))	
+} GROUP BY ?personItem ?date ?countryItem ?genderItem ?causeOfDeathItem ?ethnicGroupItem ?educatedAtItem ?coord
+}
+SERVICE wikibase:label {
+bd:serviceParam wikibase:language 'es' .
+?personItem schema:description ?personDescription .
+?personItem rdfs:label ?person .
+?countryItem rdfs:label ?Country_of_citizenship .
+?genderItem rdfs:label ?Gender .
+?causeOfDeathItem rdfs:label ?Cause_of_death .
+?ethnicGroupItem rdfs:label ?Ethnic_group .
+?educatedAtItem rdfs:label ?Education .
+}
+}  ORDER BY DESC(?rank)
