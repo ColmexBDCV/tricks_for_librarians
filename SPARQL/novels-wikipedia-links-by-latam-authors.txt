@@ -1,0 +1,13 @@
+#Consulta de Silvia Gutiérrez @espejolento
+SELECT ?item ?itemLabel ?authorLabel ?linkCount WHERE {
+  ?item wdt:P31 wd:Q8261;
+        wdt:P50 ?author .
+  ?author wdt:P19 ?birthplace .
+  ?birthplace wdt:P17 ?countryItem .  
+?countryItem p:P361/ps:P361 wd:Q12585 .
+  ?item wikibase:sitelinks ?linkCount . #cuántos artículos en otro idioma
+    ?article schema:about ?item .
+    ?article schema:isPartOf <https://es.wikipedia.org/> . #has wikipedia article
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],es". }
+}
+LIMIT 10000
