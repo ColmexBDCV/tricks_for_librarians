@@ -20,20 +20,15 @@ Ud. es libre de
 Bajo las condiciones siguientes:
 --------------------------------
 
-![**Atribución** - Debe reconocer los créditos de la obra de la manera
+![Atribución](https://endefensadelsl.org/images/by.png)  **Atribución** - Debe reconocer los créditos de la obra de la manera
 especificada por el autor o el licenciante (pero no de una manera que sugiera
-que tiene su apoyo o que apoyan el uso que hace de su obra).](https://endefensadelsl.org/images/by.png)
+que tiene su apoyo o que apoyan el uso que hace de su obra).
 
-![**Compartir bajo la Misma Licencia** - Si altera o transforma esta obra, o
+![Compartir](https://endefensadelsl.org/images/sa.png) **Compartir bajo la Misma Licencia** - Si altera o transforma esta obra, o
 genera una obra derivada, sólo puede distribuir la obra generada bajo una
-licencia idéntica a ésta.](https://endefensadelsl.org/images/sa.png)
+licencia idéntica a ésta.
 
-![**No Capitalista** - La explotación comercial de esta obra sólo está permitida
-a cooperativas, organizaciones y colectivos sin fines de lucro, a
-organizaciones de trabajadores autogestionados, y donde no existan relaciones
-de explotación.  Todo excedente o plusvalía obtenidos por el ejercicio de los
-derechos concedidos por esta Licencia sobre la Obra deben ser distribuidos por y
-entre los trabajadores.](https://endefensadelsl.org/images/nc.png)
+![No capitalista](https://endefensadelsl.org/images/nc.png) **No Capitalista** - La explotación comercial de esta obra sólo está permitida a cooperativas, organizaciones y colectivos sin fines de lucro, a organizaciones de trabajadores autogestionados, y donde no existan relaciones de explotación.  Todo excedente o plusvalía obtenidos por el ejercicio de los derechos concedidos por esta Licencia sobre la Obra deben ser distribuidos por y entre los trabajadores.
 
 
 Entendiendo que
