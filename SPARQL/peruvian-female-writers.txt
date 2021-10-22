@@ -1,0 +1,17 @@
+#defaultView:Map{"hide": ["?coord"]}
+#Query by Silvia Gutiérrez (@espejolento)
+SELECT ?author ?authorLabel ?birthplaceLabel ?coord (GROUP_CONCAT(DISTINCT ?occupation_label; SEPARATOR = ", ") AS ?occupations) WHERE {
+  ?author wdt:P21 wd:Q6581072;
+    wdt:P106 wd:Q36180;
+    wdt:P19 ?birthplace.
+  ?birthplace wdt:P17 wd:Q419;
+    wdt:P625 ?coord.
+  OPTIONAL {
+    ?author wdt:P106 ?occupation.
+    ?occupation rdfs:label ?occupation_label.
+    FILTER((LANG(?occupation_label)) = "es")
+  }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],es". }
+}
+GROUP BY ?author ?authorLabel ?birthplaceLabel ?coord
+LIMIT 200
