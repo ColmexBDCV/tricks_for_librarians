@@ -49,3 +49,8 @@ Usar la función: "Add column based on this column"
 ```
 cell.recon.match.id
 ```
+
+# 4. Facetar por número de ocurrencias #
+```
+facetCount(value, "value", "COLUMN_NAME")  > 100
+```
