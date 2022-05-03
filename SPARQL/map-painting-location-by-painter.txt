@@ -1,0 +1,11 @@
+#defaultView:Map
+#consulta de Silvia Gutiérrez @espejolento
+SELECT ?subjLabel ?coord ?subj
+WHERE
+{
+   ?subj wdt:P170 wd:Q315647 . #Puedes editar el nombre de el/la artista aquí
+  OPTIONAL {?subj wdt:P276 ?loc .
+    ?loc wdt:P625 ?coord } 
+    #la sig línea es para obtener el título de la pintura en español si se puede o en su defecto, en AUTO_LANGUAGE (o sea en inglés)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],es".} 
+}
