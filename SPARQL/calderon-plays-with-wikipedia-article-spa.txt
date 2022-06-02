@@ -1,0 +1,9 @@
+SELECT ?obra ?obraLabel ?article WHERE {
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+  ?obra wdt:P50 wd:Q170800.
+
+      ?article schema:about ?obra .
+      ?article schema:inLanguage "es" .
+      FILTER (SUBSTR(str(?article), 1, 25) = "https://es.wikipedia.org/")
+}
+LIMIT 100
