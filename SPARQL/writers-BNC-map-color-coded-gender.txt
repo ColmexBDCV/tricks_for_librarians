@@ -1,0 +1,24 @@
+#defaultView:Map{"layer":"?gender"}
+SELECT ?person ?personLabel ?gender ?idCCAB ?location WHERE {
+?person wdt:P1890 ?idCCAB; #has GND id
+    wdt:P106 wd:Q36180; #writer
+    wdt:P19 ?lugarnacimiento.
+  ?lugarnacimiento wdt:P625 ?location.
+  OPTIONAL {
+    ?person wdt:P21/wdt:P279* wd:Q6581072.
+    BIND("female"@en AS ?female)
+  }
+  OPTIONAL {
+    ?person wdt:P21/wdt:P279* wd:Q6581097.
+    BIND("male"@en AS ?male)
+  }
+  OPTIONAL {
+    ?person wdt:P21 ?gender.
+    MINUS { ?gender wdt:P279* wd:Q6581097. }
+    MINUS { ?gender wdt:P279* wd:Q6581072. }
+    FILTER(!ISBLANK(?gender))
+    BIND("other"@en AS ?other)
+  }
+  BIND(COALESCE(?female, ?male, ?other, "unknown"@en) AS ?gender)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
