@@ -54,3 +54,6 @@ cell.recon.match.id
 ```
 facetCount(value, "value", "COLUMN_NAME")  > 100
 ```
+
+# 5. Colapsar varias filas con del mismo valor (por ejemplo países de una misma entidad#
+Ir a "edit cells" -> join multivalued cells
