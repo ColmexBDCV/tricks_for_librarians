@@ -1,0 +1,17 @@
+#defaultView:Map
+# show authors, their Wikidata match, their birth place in a map
+PREFIX wid: <http://www.wikidata.org/entity/> #wikidata prefix definition for entity
+PREFIX widt: <http://www.wikidata.org/prop/direct/> #wikidata prefix definition for property
+prefix wd:<http://data.mimotext.uni-trier.de/entity/> #mimotext prefix for entity is wd
+prefix wdt:<http://data.mimotext.uni-trier.de/prop/direct/> #mimotext prefix for property is wdt
+SELECT ?author ?authorLabel ?wikiLink ?birthplace ?location 
+{
+  ?author wdt:P11 ?occupation.
+  ?author wdt:P13 ?wikiLink.
+  ?author rdfs:label ?authorLabel
+  FILTER(lang(?authorLabel) = "en")     
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?wikiLink widt:P19 ?birthplace.
+    ?birthplace widt:P625 ?location.
+  }         
+}
