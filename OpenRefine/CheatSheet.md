@@ -31,13 +31,6 @@ Una vez que están en una columna puedes:
 
 ![Imagen de cómo llegar a esa función](https://i.stack.imgur.com/8Pdz5.png)
 
-# 4. Añadir coordenadas
-
-Add column by fetching URL (add username, remember to have https://www.geonames.org/enablefreewebservice)
-
-```
-'http://api.geonames.org/searchJSON?q=' + value.split(" ").join("%20") + '&orderby=relevance&maxRows=1&username=yourname'
-```
 
 4) Escribir la siguiente expresión:
 
@@ -64,3 +57,16 @@ facetCount(value, "value", "COLUMN_NAME")  > 100
 
 # 5. Colapsar varias filas con del mismo valor (por ejemplo países de una misma entidad#
 Ir a "edit cells" -> join multivalued cells
+
+# 6. Añadir coordenadas
+
+1) Add column by fetching URL (add username, remember to have https://www.geonames.org/enablefreewebservice)
+
+```
+'http://api.geonames.org/searchJSON?q=' + value.split(" ").join("%20") + '&orderby=relevance&maxRows=1&username=yourname'
+```
+2)
+
+```
+value.parseJson().geonames[0]["lat"] + "," + value.parseJson().geonames[0]["lng"]
+```
