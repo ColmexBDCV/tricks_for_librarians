@@ -31,6 +31,13 @@ Una vez que están en una columna puedes:
 
 ![Imagen de cómo llegar a esa función](https://i.stack.imgur.com/8Pdz5.png)
 
+# 4. Añadir coordenadas
+
+Add column by fetching URL (add username, remember to have https://www.geonames.org/enablefreewebservice)
+
+```
+'http://api.geonames.org/searchJSON?q=' + value.split(" ").join("%20") + '&orderby=relevance&maxRows=1&username=yourname'
+```
 
 4) Escribir la siguiente expresión:
 
