@@ -63,9 +63,9 @@ Ir a "edit cells" -> join multivalued cells
 1) Add column by fetching URL (add username, remember to have https://www.geonames.org/enablefreewebservice)
 
 ```
-'http://api.geonames.org/searchJSON?q=' + value.split(" ").join("%20") + '&orderby=relevance&maxRows=1&username=yourname'
+'http://api.geonames.org/searchJSON?q='+value.split(" ").join("%20")+'&orderby=relevance&maxRows=1&username=yourname'
 ```
-2)
+2) Click - Edit cells & transform
 
 ```
 value.parseJson().geonames[0]["lat"] + "," + value.parseJson().geonames[0]["lng"]
