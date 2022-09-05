@@ -2,17 +2,17 @@
 #Query by Silvia Gutiérrez (@espejolento)
 SELECT ?author ?authorLabel ?birthplaceLabel ?LCSH ?coord (GROUP_CONCAT(DISTINCT ?occupation_label; SEPARATOR = ", ") AS ?occupations) WHERE {
   ?author wdt:P244 ?LCSH;
-    wdt:P21 wd:Q6581072;
+    wdt:P21 wd:Q6581072; #gender (now: female change to wd:Q6581097 for male)
     wdt:P106 wd:Q36180;
     wdt:P19 ?birthplace.
-  ?birthplace wdt:P17 wd:Q155;
+  ?birthplace wdt:P17 wd:Q155; #birthplace (now Brazil, change to wd:Q38 for Italy)
     wdt:P625 ?coord.
   OPTIONAL {
     ?author wdt:P106 ?occupation.
     ?occupation rdfs:label ?occupation_label.
-    FILTER((LANG(?occupation_label)) = "es")
+    FILTER((LANG(?occupation_label)) = "en") #occupation labels (change to "en" for English)
   }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],es". }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } #same as in line 13
 }
 GROUP BY ?author ?authorLabel ?birthplaceLabel ?LCSH ?coord
 LIMIT 5000
