@@ -1,0 +1,42 @@
+# Introductory workshop on word processing with R
+# Author: Silvia Gutiérrez (@espejolento)
+# License: CC BY 4.0
+# Inspired by the workshop with @rivaquiroga: https://github.com/silviaegt/RLadiesCDMX_talleres/blob/master/extraccion_pdfs/importacion-y-limpuerta-textos.R
+
+# BEFORE! Make sure that the pdf you want to transform is in the same folder as your code
+# In this lesson we will use four R packages, if you don't have them installed
+# you can install them with the function: install.packages("package name in quotes")
+
+library(pdftools)
+library(stringr)
+library(readr)
+library(tesseract)
+
+
+#How to cite:
+
+citation("pdftools")
+
+# Example 1: Digital native text (which was typed on a computer and saved as a pdf) -------------------------------- -
+
+# Read the text with the following pdftools function:
+law <- pdftools::pdf_text("Federal_Refugee_Law.pdf")
+law #we can always see what is in our variable by typing its name and pressing Ctrl+Enter (or from our environment variables)
+
+# The function saved each page in different vectors
+# to save all the text in the same variable we use the stringr function, str_c() and the "collapse" parameter
+law_text <- stringr::str_c(law, collapse = "")
+law_text #we can save the collapsed text in a new variable, so you can see the difference
+
+# Save your collapsed text (the one you generated on line 23)
+#in a plain text file with the readr function: write_lines()
+readr::write_lines(law_text, "law.txt")
+
+############# Example 2: Text/Image (scanned) #################
+
+tesseract::tesseract_download("deu") # the training data of the language we are interested in is downloaded
+
+german <- pdftools::pdf_ocr_text("german.pdf", lang="deu") #OCR is applied using the language we downloaded
+
+german_text <- stringr::str_c(german, collapse = "") #see lines 21-24 to understand what this function does
+readr::write_lines(german_text, "yanez.txt") #with the function write_lines we can create a plain text document with the text extracted with OCR
