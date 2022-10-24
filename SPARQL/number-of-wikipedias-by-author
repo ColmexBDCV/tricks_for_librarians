@@ -1,0 +1,10 @@
+#Query by Silvia Gutiérrez @espejolento
+SELECT ?item ?itemLabel ?linkCount WHERE {
+  ?item wdt:P50 wd:Q692 ; #author is Shakespeare
+        wdt:P31 wd:Q7725634 . #item is instance of literary work
+  ?item wikibase:sitelinks ?linkCount . #how many articles
+    ?article schema:about ?item .
+    ?article schema:isPartOf <https://en.wikipedia.org/> . #has wikipedia article in English
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],es". }
+}
+LIMIT 10000
