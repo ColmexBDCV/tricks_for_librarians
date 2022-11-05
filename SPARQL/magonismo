@@ -1,0 +1,7 @@
+#Magonismo
+SELECT ?item ?itemLabel 
+WHERE 
+{
+  ?item wdt:P1142 wd:Q10323082. # Ideologia politica: magonismo
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],es". } #preferencia en español
+}
