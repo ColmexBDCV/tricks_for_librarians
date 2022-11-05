@@ -1,0 +1,27 @@
+#Mujeres nacidas en México sin artículo en español
+SELECT ?person ?personLabel ?personDescription ?linkCount
+
+(GROUP_CONCAT(DISTINCT ?occupation_label; SEPARATOR=", ") as ?occupations) #adds multiple occupations to single row (separated by commas)
+
+WHERE {
+  ?person wdt:P31 wd:Q5 . #humana
+  ?person wdt:P21 wd:Q6581072 . #mujer
+  ?person wikibase:sitelinks ?linkCount . #cuantos idiomas
+  OPTIONAL {
+    ?person wdt:P106 ?occupation . #ocupacion
+    ?occupation rdfs:label ?occupation_label FILTER (lang(?occupation_label) = "es")
+  }
+ #persona nacida en México
+   { ?person wdt:P19 wd:Q96}
+	#o en ciudad dentro de México
+	UNION  { ?person wdt:P19 ?pob . ?pob wdt:P131* wd:Q96 } 
+  
+  MINUS {  #sin articulo en español
+    ?article schema:about ?person .
+    ?article schema:isPartOf <https://es.wikipedia.org/> .
+  }
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],es". }
+} GROUP BY ?person ?personLabel ?personDescription ?linkCount #agrupar por
+
+ORDER BY DESC (?linkCount)
