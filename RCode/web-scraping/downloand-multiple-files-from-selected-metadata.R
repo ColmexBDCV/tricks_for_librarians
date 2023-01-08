@@ -19,7 +19,7 @@ urls <- paste0("https://raw.githubusercontent.com/cligs/conha19/main/txt/", mx$i
 
 ##### Create destination for files selected metadata #####
 detfiles <- paste0("Text_Analysis/corpus/", mx$idno, ".txt")
-
+getwd()
 #### Test download with one file ####
 #download.file(url = urls[1], destfile = detfiles[1], mode='wb')
 
