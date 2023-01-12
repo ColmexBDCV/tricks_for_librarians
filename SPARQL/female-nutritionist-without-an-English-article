@@ -1,0 +1,6 @@
+SELECT ?person ?personLabel WHERE { 
+?person wdt:P21 wd:Q6581072 . 
+?person wdt:P106 wd:Q2576499 . #get nutritians
+FILTER NOT EXISTS { ?wfr schema:about ?person . ?wfr schema:isPartOf <https://en.wikipedia.org/>.}
+SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+} limit 1000
