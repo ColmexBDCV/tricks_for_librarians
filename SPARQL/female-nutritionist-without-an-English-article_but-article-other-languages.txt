@@ -1,0 +1,20 @@
+#Women nutritionist without an English Wikipedia article (by @espejolento)
+
+SELECT ?person ?personLabel ?linkCount
+
+WHERE {
+  ?person wdt:P31 wd:Q5 . #human
+  ?person wdt:P21 wd:Q6581072 . #female
+  ?person wikibase:sitelinks ?linkCount . #how many articles in other languages
+  ?person wdt:P106 wd:Q2576499 . #get nutritians
+
+  
+  MINUS {  # who do NOT have an article in English but do have in another language
+    ?article schema:about ?person .
+    ?article schema:isPartOf <https://en.wikipedia.org/> .
+  }
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+} GROUP BY ?person ?personLabel ?linkCount #GROUP BY
+
+ORDER BY DESC (?linkCount)
