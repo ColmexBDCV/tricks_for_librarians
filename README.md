@@ -70,6 +70,8 @@ Primero se tienen que descargar https://www.xpdfreader.com/download.html y estab
 
 ### [Transformar YYYYMMDD a YYYY/MM/DD](https://github.com/ColmexBDCV/tricks_for_librarians/blob/master/RCode/from_string2date.R)
 
+### [Convertir carpeta con TXTs a un data frame](https://github.com/ColmexBDCV/tricks_for_librarians/blob/master/RCode/from_txt_to_corpus-df)
+
 ## Scripts en python
 
 ### Transformando los nombres de un archivo con acentos y eñes a ASCII
