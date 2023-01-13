@@ -1,0 +1,14 @@
+#### Load libraries
+library(tidytext)
+
+#### To do without project
+folder<-"C:/Users/segutierrez/Desktop/intro_a_R/corpus"
+list.files(path=folder) 
+filelist<- list.files(path=folder, pattern="*.txt")
+filelist<-paste(folder, "\\", filelist, sep="")
+
+#### Create corpus from filelist
+a<- lapply(filelist,FUN=readLines)
+corpus <- sapply(a ,FUN=paste, collapse=" ")
+my_data <- data.frame(files = filelist, text = corpus, stringsAsFactors = FALSE)
+tidy_text <- unnest_tokens(my_data, words, text)
