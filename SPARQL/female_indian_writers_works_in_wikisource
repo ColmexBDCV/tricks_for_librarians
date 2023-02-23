@@ -1,0 +1,10 @@
+#Female Indian Writers in WikiSource
+#Query by Silvia Gutiérrez (@espejolento)
+SELECT ?work ?workLabel ?author ?authorLabel ?wsPage WHERE {
+  ?work wdt:P50 ?author .
+  ?author wdt:P21 wd:Q6581072; #is female
+          wdt:P27 wd:Q668. #born in India
+  ?wsPage schema:about ?poem;
+    schema:isPartOf <https://en.wikisource.org/>. #in English Wikipedia
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" }
+}
