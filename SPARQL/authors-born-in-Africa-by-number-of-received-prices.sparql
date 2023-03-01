@@ -1,0 +1,9 @@
+SELECT ?person ?personLabel ?birthplaceLabel ?countryLabel (COUNT(DISTINCT ?price) AS ?ccount) 
+WHERE{
+  ?person wdt:P106 wd:Q36180;
+          wdt:P19 ?birthplace;
+          wdt:P166 ?price.
+  ?birthplace wdt:P17 ?country.
+  ?country wdt:P463 wd:Q7159.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" }
+}GROUP BY ?person ?personLabel ?birthplaceLabel ?countryLabel ORDER BY DESC(?ccount)
