@@ -1,0 +1,17 @@
+#1Lib1Ref resources
+SELECT ?file ?image ?langLabel
+(GROUP_CONCAT(DISTINCT ?subjectLabel; SEPARATOR=", ") as ?subjects)
+WHERE {
+  ?file wdt:P921 wd:Q22080614;
+        schema:url ?image.
+  OPTIONAL {
+    ?file wdt:P407 ?lang.
+    ?file wdt:P921 ?subject.
+    SERVICE <https://query.wikidata.org/sparql> {
+      ?lang rdfs:label ?langLabel .
+      ?subject rdfs:label ?subjectLabel .
+      FILTER (lang(?langLabel) = "es")
+      FILTER (lang(?subjectLabel) = "es")
+    }
+  }
+} GROUP BY ?file ?image ?langLabel ?subjects 
