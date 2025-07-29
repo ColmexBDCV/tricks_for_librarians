@@ -1,0 +1,9 @@
+SELECT ?poem ?poemLabel ?author ?authorLabel ?wsPage WHERE {
+  ?poem wdt:P31 wd:Q5185279.
+    ?poem wdt:P50 ?author .
+  ?author wdt:P27 wd:Q155.
+  ?wsPage schema:about ?poem;
+    schema:isPartOf <https://pt.wikisource.org/>.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
+ORDER BY ?authorLabel
