@@ -1,4 +1,4 @@
-#Salsa musicians without an English Wikipedia article
+#Salsa musicians from NY without an English Wikipedia article
 SELECT ?person ?personLabel ?linkCount ?lugar_de_nacimiento ?lugar_de_nacimientoLabel WHERE {
   ?person wdt:P31 wd:Q5;
     wikibase:sitelinks ?linkCount;
