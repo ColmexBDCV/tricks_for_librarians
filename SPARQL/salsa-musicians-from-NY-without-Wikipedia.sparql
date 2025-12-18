@@ -1,0 +1,32 @@
+#Salsa musicians without an English Wikipedia article
+SELECT ?person ?personLabel ?linkCount ?lugar_de_nacimiento ?lugar_de_nacimientoLabel WHERE {
+  ?person wdt:P31 wd:Q5;
+    wikibase:sitelinks ?linkCount;
+    wdt:P136 wd:Q208239.
+  
+  # Check for birth location
+  OPTIONAL { 
+    ?person wdt:P19 ?lugar_de_nacimiento.
+  }
+  
+  # Filter for NYC boroughs (including New York State Q1384 if you want that too)
+  FILTER(
+    EXISTS {
+      ?lugar_de_nacimiento wdt:P31?/wdt:P279* wd:Q408804.
+    }
+    || ?lugar_de_nacimiento = wd:Q1384
+    || ?lugar_de_nacimiento = wd:Q11299
+  )
+  
+  # Check for missing English Wikipedia article
+  FILTER NOT EXISTS {
+    ?article schema:about ?person;
+      schema:isPartOf <https://en.wikipedia.org/>.
+  }
+  
+  SERVICE wikibase:label { 
+    bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". 
+  }
+}
+GROUP BY ?person ?personLabel ?linkCount ?lugar_de_nacimiento ?lugar_de_nacimientoLabel
+ORDER BY DESC (?linkCount)
